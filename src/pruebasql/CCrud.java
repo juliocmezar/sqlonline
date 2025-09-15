@@ -12,7 +12,7 @@ public class CCrud {
      }
      
      public void consultar(){         
-      String query = "use libreria;";
+      String query = "use banco;";
       try{
          PreparedStatement ps=con.prepareStatement(query);
          int use = ps.executeUpdate();
