@@ -4,9 +4,9 @@ package pruebasql;
 import java.sql.*;
 
 public class CConexion {
-   String usuario="root";
-   String contrasena="root";
-   String url="jdbc:mysql://localhost:3306/";
+   String usuario="programacion";
+   String contrasena="#3Programacion3";
+   String url="jdbc:mysql://72.167.84.254/";
    
    
    public Connection conectar(){
