@@ -13,26 +13,26 @@ public class CCrud {
      
      public void consultar(){         
       String query = "use libreria;";
-      if(query.contains("use ")){
-         try{
+      try{
          PreparedStatement ps=con.prepareStatement(query);
          int use = ps.executeUpdate();
-         }catch (SQLException ex){
+      }catch (SQLException ex){
              
-         }
       }
+      
       try{  
           query = "select * from clientes;";
           PreparedStatement ps=con.prepareStatement(query);
           ResultSet rs = ps.executeQuery();
           ResultSetMetaData metaData = rs.getMetaData();
           int numeroColumnas = metaData.getColumnCount();
+          //traigo el nombre de las columnas
           for (int i = 1; i <= numeroColumnas; i++) {
                 System.out.print(metaData.getColumnName(i) + "\t");
-            }
+          }
           System.out.println();
-          while(rs.next()){
-            //System.out.println("ID: "+rs.getInt("id")+"   nombre: "+rs.getString("nombre")+"   apellido: "+rs.getString("apellido")+"   Fecha de nacimiento: "+rs.getString("fechan"));
+          //imprimo las filas
+          while(rs.next()){           
             for (int i = 1; i <= numeroColumnas; i++) {
                     System.out.print(rs.getString(i) + "\t");
                 }
