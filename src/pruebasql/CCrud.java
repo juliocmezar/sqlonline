@@ -15,7 +15,7 @@ public class CCrud {
       String query = "use banco;";
       try{
          PreparedStatement ps=con.prepareStatement(query);
-         int use = ps.executeUpdate();
+         ps.executeUpdate();
       }catch (SQLException ex){
              
       }
